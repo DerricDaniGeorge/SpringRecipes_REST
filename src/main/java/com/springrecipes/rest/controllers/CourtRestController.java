@@ -19,7 +19,7 @@ public class CourtRestController {
 	@Bean
 	public Marshaller jaxb2Marshaller() {
 		Jaxb2Marshaller marshaller=new Jaxb2Marshaller();
-		marshaller.setClassesToBeBound(Members.class,Member.class);
+		marshaller.setClassesToBeBound(Members.class,Member.class); //Classes that needs to be converted to xml
 		return marshaller;
 	}
 	@Bean
