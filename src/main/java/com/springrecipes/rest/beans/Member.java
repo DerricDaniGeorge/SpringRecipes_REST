@@ -4,6 +4,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Member {
 	private String name,phone,email;
+	
+	public Member() {}
+	public Member(String name, String phone, String email) {
+		
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+	}
 
 	public String getName() {
 		return name;
