@@ -11,7 +11,7 @@ import java.util.Collection;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Members {
 
-	@XmlElement(name="member")
+	@XmlElement(name="hoi")  // This "hoi" will come in xml view as tag
 	private List<Member> members=new ArrayList<>();
 	
 	public void setMembers(List<Member> members) {
@@ -22,5 +22,8 @@ public class Members {
 	}
 	public void addMembers(Collection<Member> members) {
 		this.members.addAll(members);
+	}
+	public void addMember(Member member) {
+		this.members.add(member);
 	}
 }
