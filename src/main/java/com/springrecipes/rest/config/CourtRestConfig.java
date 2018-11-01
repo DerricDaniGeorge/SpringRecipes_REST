@@ -19,7 +19,7 @@ import org.springframework.oxm.Marshaller;
 @EnableWebMvc
 //@ComponentScan(basePackages= {"com.springrecipes.rest.controllers"})
 public class CourtRestConfig {
-	@Bean
+/*	@Bean
 	public Marshaller jaxb2Marshaller() {
 		Jaxb2Marshaller marshaller=new Jaxb2Marshaller();
 		marshaller.setClassesToBeBound(Members.class,Member.class); //Classes that needs to be converted to xml
@@ -32,13 +32,13 @@ public class CourtRestConfig {
 	@Bean
 	public ViewResolver viewResolver() {
 		return new BeanNameViewResolver();
-	} 
+	}   */ 
 	@Bean
 	public MemberService memberService() {
 		return new MemberServiceImpl();
 	}
-	
-/*	@Bean
+	/*
+	@Bean
 	public View jsonMemberTemplate() {
 		MappingJackson2JsonView view=new MappingJackson2JsonView();
 		view.setPrettyPrint(true);

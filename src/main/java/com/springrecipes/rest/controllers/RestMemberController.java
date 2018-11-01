@@ -17,12 +17,11 @@ public class RestMemberController {
 	private  MemberService memberService;
 	
 	@RequestMapping(value="/members")
-//	@ResponseBody
-	public String getRestMembersXml(Model model) {
+	@ResponseBody
+	public Members getRestMembers() {
 		Members members=new Members();
 		members.addMembers(memberService.findAll());
-		model.addAttribute("members",members);
-		return "memberTemplate";
+		return members;
 	}  
 /*	@RequestMapping(value="/members",produces=MediaType.APPLICATION_JSON_VALUE)
 	public String getRestMembersJson(Model model) {
@@ -30,15 +29,14 @@ public class RestMemberController {
 		members.addMembers(memberService.findAll());
 		model.addAttribute("members",members);
 		return "jsonMemberTemplate";
-	}   */
-	@RequestMapping(value="/members/{name}")
-	
-	public String getMember(@PathVariable ("name") String name,Model model) {
+	}  */   
+	@RequestMapping(value="/member/{name}")
+	@ResponseBody
+	public Members getMember(@PathVariable ("name") String name,Model model) {
 		Member m= memberService.findMemberByName(name);
 		System.out.println(m.getEmail()+":"+m.getName());
 		Members members=new Members();
 		members.addMember(m);
-		model.addAttribute("members",m);
-		return "memberTemplate";
+		return members; 
 	}
 }
